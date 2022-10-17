@@ -16,11 +16,11 @@ describe('Appium', function () {
   before(async () => {
     global.codecept_dir = path.join(__dirname, '/../data');
     app = new Appium({
-      app: apk_path,
       capabilities: {
         platformName: 'Android',
+        'appium:app': apk_path,
         'appium:deviceName': 'Android GoogleAPI Emulator',
-        'appium:platformVersion': '11.0',
+        'appium:platformVersion': '12.0',
         'appium:automationName': 'UiAutomator2',
       },
       hostname: 'ondemand.us-west-1.saucelabs.com',
