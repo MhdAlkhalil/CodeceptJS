@@ -17,18 +17,17 @@ describe('Appium', function () {
     global.codecept_dir = path.join(__dirname, '/../data');
     app = new Appium({
       app: apk_path,
-      desiredCapabilities: {
-        appiumVersion: '1.9.1',
-        browserName: '',
+      capabilities: {
+        platformName: 'Android',
+        'appium:deviceName': 'Android GoogleAPI Emulator',
+        'appium:platformVersion': '11.0',
+        'appium:automationName': 'UiAutomator2',        
         recordVideo: 'true',
         recordScreenshots: 'false',
-        platformName: 'Android',
-        platformVersion: '11.0',
-        deviceName: 'Android Emulator',
       },
-      protocol: 'http',
-      host: 'ondemand.saucelabs.com',
-      port: 80,
+      hostname: 'ondemand.us-west-1.saucelabs.com',
+      port: 443,
+      baseUrl: 'wd/hub',
       // port: 4723,
       // host: 'localhost',
       user: process.env.SAUCE_USERNAME,
