@@ -20,10 +20,10 @@ describe('Appium', function () {
       desiredCapabilities: {
         appiumVersion: '1.9.1',
         browserName: '',
-        recordVideo: 'false',
+        recordVideo: 'true',
         recordScreenshots: 'false',
         platformName: 'Android',
-        platformVersion: '6.0',
+        platformVersion: '11.0',
         deviceName: 'Android Emulator',
       },
       protocol: 'http',
@@ -33,13 +33,17 @@ describe('Appium', function () {
       // host: 'localhost',
       user: process.env.SAUCE_USERNAME,
       key: process.env.SAUCE_ACCESS_KEY,
+      restart: false,
     });
     await app._beforeSuite();
+  });
+  
+  beforeEach(async () => {
     app.isWeb = false;
     await app._before();
   });
 
-  after(async () => {
+  afterEach(async () => {
     await app._after()
   });
 
