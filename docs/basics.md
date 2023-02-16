@@ -662,7 +662,7 @@ To retry `Before`, `BeforeSuite`, `After`, `AfterSuite` hooks, add corresponding
 For instance, to retry Before hook 3 times:
 
 ```js
-Feature('this have a flaky Befure', { retryBefore: 3 })
+Feature('this have a flaky Before', { retryBefore: 3 })
 ```
 
 Multiple options of different values can be set at the same time
